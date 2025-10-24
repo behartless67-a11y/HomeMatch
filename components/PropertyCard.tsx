@@ -93,7 +93,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
   };
 
   return (
-    <div className="flex flex-col items-center w-full px-4 sm:px-0">
+    <div className="flex flex-col items-center w-full px-2 sm:px-0">
       {/* Main Card - Tinder Style */}
       <motion.div
         className="w-full max-w-[500px] bg-white rounded-2xl shadow-2xl overflow-hidden relative cursor-pointer"
