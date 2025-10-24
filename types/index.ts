@@ -34,6 +34,9 @@ export interface UserPreferences {
   maxDaysOnMarket: number;
   noHOA: boolean;
   petFriendly: boolean;
+  minParkingSpots: number;
+  singleStoryOnly: boolean;
+  newConstructionOnly: boolean;
   propertyTypes: string[];
   states: string[];
   cities: string[];

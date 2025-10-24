@@ -36,8 +36,22 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
     'Central AC',
     'Fireplace',
     'Deck',
+    'Patio',
+    'Fenced Yard',
+    'Updated Kitchen',
+    'Updated Bathrooms',
+    'Walk-in Closet',
+    'Laundry Room',
+    'Basement',
+    'Home Office',
     'Ocean View',
     'Mountain View',
+    'Lake View',
+    'Energy Efficient',
+    'Solar Panels',
+    'EV Charging',
+    'Security System',
+    'Gated Community',
   ];
   const sortOptions = [
     { value: 'newest', label: 'Newest First' },
@@ -317,10 +331,29 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
             </div>
           </div>
 
+          {/* Parking */}
+          <div className="mb-6">
+            <h3 className="font-semibold text-gray-900 mb-3">Parking</h3>
+            <div>
+              <label className="block text-sm text-gray-600 mb-1">Minimum Parking Spots</label>
+              <input
+                type="number"
+                value={preferences.minParkingSpots}
+                onChange={(e) =>
+                  setPreferences({ ...preferences, minParkingSpots: Number(e.target.value) })
+                }
+                min="0"
+                className="w-full px-3 py-2 border border-gray-300 hover:border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                placeholder="0"
+              />
+              <p className="text-xs text-gray-500 mt-1">Garage spots, carport, or driveway spaces</p>
+            </div>
+          </div>
+
           {/* Special Filters (Checkboxes) */}
           <div className="mb-6">
             <h3 className="font-semibold text-gray-900 mb-3">Special Requirements</h3>
-            <div className="space-y-3">
+            <div className="grid grid-cols-2 gap-4">
               <label className="flex items-center gap-3 cursor-pointer">
                 <input
                   type="checkbox"
@@ -328,7 +361,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                   onChange={(e) =>
                     setPreferences({ ...preferences, noHOA: e.target.checked })
                   }
-                  className="w-5 h-5 text-emerald-500 rounded focus:ring-2 focus:ring-emerald-500"
+                  className="w-5 h-5 text-teal-500 rounded focus:ring-2 focus:ring-teal-500"
                 />
                 <span className="text-gray-700 font-medium">No HOA</span>
               </label>
@@ -339,9 +372,31 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                   onChange={(e) =>
                     setPreferences({ ...preferences, petFriendly: e.target.checked })
                   }
-                  className="w-5 h-5 text-emerald-500 rounded focus:ring-2 focus:ring-emerald-500"
+                  className="w-5 h-5 text-teal-500 rounded focus:ring-2 focus:ring-teal-500"
                 />
                 <span className="text-gray-700 font-medium">Pet Friendly</span>
+              </label>
+              <label className="flex items-center gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={preferences.singleStoryOnly}
+                  onChange={(e) =>
+                    setPreferences({ ...preferences, singleStoryOnly: e.target.checked })
+                  }
+                  className="w-5 h-5 text-teal-500 rounded focus:ring-2 focus:ring-teal-500"
+                />
+                <span className="text-gray-700 font-medium">Single Story Only</span>
+              </label>
+              <label className="flex items-center gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={preferences.newConstructionOnly}
+                  onChange={(e) =>
+                    setPreferences({ ...preferences, newConstructionOnly: e.target.checked })
+                  }
+                  className="w-5 h-5 text-teal-500 rounded focus:ring-2 focus:ring-teal-500"
+                />
+                <span className="text-gray-700 font-medium">New Construction Only</span>
               </label>
             </div>
           </div>

@@ -88,10 +88,10 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full px-4 sm:px-0">
       {/* Main Card - Tinder Style */}
       <motion.div
-        className="w-[500px] bg-white rounded-2xl shadow-2xl overflow-hidden relative cursor-pointer"
+        className="w-full max-w-[500px] bg-white rounded-2xl shadow-2xl overflow-hidden relative cursor-pointer"
         style={{ x, rotate, opacity }}
         drag={showButtons ? 'x' : false}
         dragConstraints={{ left: 0, right: 0 }}
@@ -114,21 +114,35 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
         )}
         {/* LIKE Overlay */}
         <motion.div
-          className="absolute top-20 left-12 z-30 pointer-events-none"
+          className="absolute top-12 sm:top-20 left-4 sm:left-12 z-30 pointer-events-none"
           style={{ opacity: likeOpacity }}
         >
-          <div className="border-4 border-green-500 text-green-500 font-bold text-6xl px-6 py-2 rotate-[-20deg]">
+          <div className="border-4 border-green-500 text-green-500 font-bold text-4xl sm:text-6xl px-4 sm:px-6 py-2 rotate-[-20deg]">
             LIKE
           </div>
         </motion.div>
 
         {/* NOPE Overlay */}
         <motion.div
-          className="absolute top-20 right-12 z-30 pointer-events-none"
+          className="absolute top-12 sm:top-20 right-4 sm:right-12 z-30 pointer-events-none"
           style={{ opacity: nopeOpacity }}
         >
-          <div className="border-4 border-red-500 text-red-500 font-bold text-6xl px-6 py-2 rotate-[20deg]">
+          <div className="border-4 border-red-500 text-red-500 font-bold text-4xl sm:text-6xl px-4 sm:px-6 py-2 rotate-[20deg]">
             NOPE
+          </div>
+        </motion.div>
+
+        {/* Swipe Hint - Only show when x is 0 (not being dragged) */}
+        <motion.div
+          className="absolute bottom-4 sm:bottom-6 left-0 right-0 flex justify-center z-20 pointer-events-none px-4"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: Math.abs(x.get()) > 10 ? 0 : 1 }}
+          transition={{ duration: 0.2 }}
+        >
+          <div className="bg-black/70 backdrop-blur-sm text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-medium flex items-center gap-2 shadow-lg">
+            <span className="text-base sm:text-lg">←</span>
+            <span>Drag to swipe</span>
+            <span className="text-base sm:text-lg">→</span>
           </div>
         </motion.div>
         {/* Share Button - Top Right */}
@@ -166,7 +180,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
         </div>
 
         {/* Image Section - Top */}
-        <div className="relative w-full h-[500px] bg-gray-200">
+        <div className="relative w-full h-[60vh] sm:h-[500px] bg-gray-200">
           <img
             src={property.images[currentImageIndex]}
             alt={property.address}
