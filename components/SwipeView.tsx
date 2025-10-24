@@ -262,13 +262,13 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
 
   if (!hasSetPreferences) {
     return (
-      <div className="h-full flex flex-col items-center justify-center py-4 relative">
+      <div className="h-full flex flex-col items-center justify-center p-4 sm:py-4 relative">
         <div
           className="fixed inset-0 bg-cover bg-center opacity-20 pointer-events-none"
           style={{ backgroundImage: 'url(/requirements-to-buy-a-house.webp)' }}
         />
-        <div className="relative z-10 flex flex-col items-center">
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl border-4 border-orange-400 p-8 max-w-2xl text-center">
+        <div className="relative z-10 flex flex-col items-center my-auto">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl border-4 border-orange-400 p-6 sm:p-8 max-w-2xl text-center mx-4">
             {/* Logo inside the card */}
             <div className="-mb-4 -mt-4">
               <img src="/logo.png" alt="HomeMatch" className="w-full h-auto object-contain" />
