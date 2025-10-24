@@ -69,8 +69,14 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-3xl max-w-6xl w-full max-h-[95vh] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.3)] border-4 border-teal-400">
+    <div
+      className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 z-50 overflow-y-auto"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white rounded-3xl max-w-6xl w-full max-h-[95vh] my-auto overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.3)] border-4 border-teal-400 touch-none"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header with colored background */}
         <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-8 shadow-lg">
           <div className="flex justify-between items-center">

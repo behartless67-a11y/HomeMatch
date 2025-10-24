@@ -62,7 +62,9 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
   };
 
   const handleDragEnd = (_: any, info: any) => {
-    if (Math.abs(info.offset.x) > 150) {
+    // Lower threshold for mobile - 100px instead of 150px
+    const threshold = 100;
+    if (Math.abs(info.offset.x) > threshold) {
       // Swiped far enough - trigger action
       setExitX(info.offset.x > 0 ? 1000 : -1000);
       if (info.offset.x > 0) {
@@ -95,7 +97,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
         style={{ x, rotate, opacity }}
         drag={showButtons ? 'x' : false}
         dragConstraints={{ left: 0, right: 0 }}
-        dragElastic={0.7}
+        dragElastic={1}
         onDragEnd={handleDragEnd}
         onClick={handleDoubleTap}
         animate={exitX !== 0 ? { x: exitX } : {}}
