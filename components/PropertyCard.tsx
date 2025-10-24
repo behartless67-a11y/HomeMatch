@@ -62,12 +62,12 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
   };
 
   const handleDragEnd = (_: any, info: any) => {
-    // Much lower threshold for mobile - 60px or fast swipe velocity
-    const threshold = 60;
+    // Super low threshold for mobile - 40px for slow drags, or fast swipe velocity
+    const threshold = 40;
     const velocity = Math.abs(info.velocity.x);
     const swipeDistance = Math.abs(info.offset.x);
 
-    // Trigger if: 1) dragged past threshold, OR 2) fast swipe (velocity > 500)
+    // Trigger if: 1) dragged past 40px, OR 2) fast swipe (velocity > 500)
     if (swipeDistance > threshold || velocity > 500) {
       setExitX(info.offset.x > 0 ? 1000 : -1000);
       if (info.offset.x > 0) {
