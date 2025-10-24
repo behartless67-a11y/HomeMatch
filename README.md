@@ -1,28 +1,45 @@
-# HomeMatch - Tinder-Style House Hunting App
+# HomeMatch 🏡
 
-A modern, swipe-based real estate browsing application that makes house hunting as easy and fun as dating apps. Swipe right to like properties, left to pass, and filter by your preferences.
+**"No Commitment Issues Here - Unless It's a 30-Year Mortgage"**
 
-## Features
+A Tinder-style property browsing app that makes house hunting fun! Swipe right to like properties, left to pass. Built with Next.js 14, React 18, and Framer Motion.
 
-- **Tinder-Style Swipe Interface**: Swipe right to like, left to pass on properties
-- **Smart Filtering**: Filter properties by price, bedrooms, bathrooms, property type, location, and features
-- **Liked Properties Dashboard**: View all your liked properties in one place
-- **Real-time Updates**: Daily property data refresh with manual refresh option
-- **Responsive Design**: Clean, modern UI without gradients or emojis
-- **Property Details**: View comprehensive property information including images, stats, and features
+🚀 **[Live on Vercel](https://home-match-gevu.vercel.app)** (Update with your actual URL)
 
-## Tech Stack
+## ✨ Features
 
-**Frontend:**
-- React 18 with TypeScript
-- Vite (build tool)
-- Tailwind CSS (styling)
-- Framer Motion (animations)
+### Core Functionality
+- 🔄 **Tinder-Style Swiping** - Drag anywhere on photos (40px threshold + velocity detection)
+- ⌨️ **Keyboard Shortcuts** - Arrow keys for quick browsing
+- 📱 **Mobile Optimized** - Touch gestures, responsive design, no horizontal scroll
+- 🎯 **Advanced Filtering** - 20+ filter options (price, beds, baths, features, etc.)
+- ♥️ **Like Management** - Save and review favorite properties
+- ↩️ **Undo Button** - Changed your mind? Go back one swipe
+- 🎉 **Match Celebrations** - Fun animations with bouncing emojis when you like
+- 👆 **Double-Tap to Like** - Quick gesture support with heart animation
+- 🎴 **Card Stack Preview** - See next properties stacked behind current card
 
-**Future Backend (planned):**
-- Node.js with Express
-- PostgreSQL
-- Real estate API integration
+### Polish & UX
+- ✨ Beautiful loading states ("Finding your perfect home...")
+- 🏚️ Fun completion screens with personality ("Tough Crowd!")
+- 💚 Teal & orange brand colors from logo
+- ✍️ Handwritten tagline font (Caveat)
+- 🌓 Background images on all screens
+- 📊 Property counter and stats
+- 🔍 LIKE/NOPE overlays during swipe
+- 💫 Smooth fade-in animations throughout
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14.2.5 (App Router)
+- **UI Library**: React 18.3.1
+- **Animation**: Framer Motion 12.23.24
+- **Styling**: Tailwind CSS 3.4.17
+- **TypeScript**: Full type safety
+- **Icons**: Lucide React, React Icons
+- **Deployment**: Vercel (automatic from GitHub)
+- **Fonts**: Google Fonts (Caveat for tagline)
+- **API**: RapidAPI Realtor (optional, currently using mock data)
 
 ## Getting Started
 
