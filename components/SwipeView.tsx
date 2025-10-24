@@ -294,8 +294,8 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
         style={{ backgroundImage: 'url(/requirements-to-buy-a-house.webp)' }}
       />
 
-      {/* Logo - Fixed Bottom Right */}
-      <div className="fixed bottom-4 right-4 z-20 pointer-events-none">
+      {/* Logo - Fixed Bottom Right (Hidden on mobile) */}
+      <div className="hidden sm:block fixed bottom-4 right-4 z-20 pointer-events-none">
         <img src="/logo.png" alt="HomeMatch" className="h-64 w-auto opacity-90" />
       </div>
 
