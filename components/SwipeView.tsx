@@ -297,7 +297,7 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
   }
 
   return (
-    <div className="h-full flex flex-col items-center justify-center py-4 overflow-y-auto relative">
+    <div className="h-full flex flex-col items-center justify-center sm:py-4 overflow-y-auto relative">
       <div
         className="fixed inset-0 bg-cover bg-center opacity-20 pointer-events-none"
         style={{ backgroundImage: 'url(/requirements-to-buy-a-house.webp)' }}
@@ -308,7 +308,7 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
         <img src="/logo.png" alt="HomeMatch" className="h-64 w-auto opacity-90" />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center w-full my-auto">
+      <div className="relative z-10 flex flex-col items-center w-full h-full sm:h-auto sm:my-auto">
         {/* Top Bar - Filters and Stats (Desktop Only) */}
         <div className="hidden sm:block w-full max-w-[500px] mb-2 flex-shrink-0">
           <div className="flex justify-between items-center text-sm text-gray-700 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
@@ -325,16 +325,17 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
 
 
         {/* Property Card Stack */}
-        <div className="flex-shrink-0 relative w-full max-w-[600px]" style={{ minHeight: '700px' }}>
+        <div className="flex-shrink-0 relative w-full sm:max-w-[600px] h-full sm:h-auto" style={{ minHeight: '700px' }}>
           {/* Render up to 3 cards in the stack */}
           {[2, 1, 0].map((offset) => {
             const cardIndex = currentIndex + offset;
             if (cardIndex >= filteredProperties.length) return null;
 
             const isTopCard = offset === 0;
+            // On mobile: no scaling or offsetting for background cards
             const scale = isTopCard ? 1 : 0.92;
             const translateY = offset * -12;
-            // Offset background cards to alternate sides
+            // Offset background cards to alternate sides (desktop only)
             const translateX = isTopCard ? 0 : (offset === 1 ? 60 : -60);
             const opacity = isTopCard ? 1 : 0.6;
             const zIndex = isTopCard ? 30 : 30 - offset;
@@ -343,10 +344,10 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
             return (
               <div
                 key={cardIndex}
-                className="absolute top-0 left-1/2 -translate-x-1/2 transition-all duration-300"
+                className="absolute top-0 left-0 sm:left-1/2 w-full sm:w-auto sm:-translate-x-1/2 transition-all duration-300"
                 style={{
-                  transform: `translateX(calc(-50% + ${translateX}px)) translateY(${translateY}px) scale(${scale}) rotate(${rotation}deg)`,
-                  opacity,
+                  transform: window.innerWidth < 640 ? 'none' : `translateX(calc(-50% + ${translateX}px)) translateY(${translateY}px) scale(${scale}) rotate(${rotation}deg)`,
+                  opacity: window.innerWidth < 640 && !isTopCard ? 0 : opacity,
                   zIndex,
                   pointerEvents: isTopCard ? 'auto' : 'none',
                 }}
