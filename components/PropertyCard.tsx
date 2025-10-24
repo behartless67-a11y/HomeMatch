@@ -93,10 +93,10 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
   };
 
   return (
-    <div className="flex flex-col items-center w-full px-1 sm:px-0">
+    <div className="flex flex-col items-center w-full">
       {/* Main Card - Tinder Style */}
       <motion.div
-        className="w-full max-w-[500px] bg-white rounded-2xl shadow-2xl overflow-hidden relative cursor-pointer"
+        className="w-[calc(100vw-16px)] sm:w-full sm:max-w-[500px] bg-white rounded-2xl shadow-2xl overflow-hidden relative cursor-pointer"
         style={{ x, rotate, opacity }}
         drag={showButtons ? 'x' : false}
         dragConstraints={{ left: 0, right: 0 }}
