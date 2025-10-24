@@ -14,7 +14,7 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [likedProperties, setLikedProperties] = useState<Property[]>([]);
   const [passedProperties, setPassedProperties] = useState<Property[]>([]);
-  const [showPreferences, setShowPreferences] = useState(true);
+  const [showPreferences, setShowPreferences] = useState(false);
   const [showLikedView, setShowLikedView] = useState(false);
   const [hasSetPreferences, setHasSetPreferences] = useState(false);
   const [filteredProperties, setFilteredProperties] = useState<Property[]>(properties);
@@ -265,7 +265,7 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
               <img src="/logo.png" alt="HomeMatch" className="w-full h-auto object-contain" />
             </div>
 
-            <p className="text-gray-800 text-xl font-bold mb-6">
+            <p className="text-gray-800 text-2xl font-bold mb-6" style={{ fontFamily: "'Caveat', cursive" }}>
               No Commitment Issues Here - Unless It&apos;s a 30-Year Mortgage
             </p>
             <button
