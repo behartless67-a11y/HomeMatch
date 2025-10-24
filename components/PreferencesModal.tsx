@@ -55,18 +55,23 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-        <div className="p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-gray-900">Set Your Preferences</h2>
+    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+      <div className="bg-white rounded-3xl max-w-6xl w-full max-h-[95vh] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.3)] border-4 border-teal-400">
+        {/* Header with colored background */}
+        <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-8 shadow-lg">
+          <div className="flex justify-between items-center">
+            <h2 className="text-4xl font-bold text-white drop-shadow-lg">Set Your Preferences</h2>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-gray-600 text-2xl"
+              className="text-white hover:text-orange-300 text-4xl font-bold hover:rotate-90 transition-all duration-300"
             >
               ×
             </button>
           </div>
+          <p className="text-teal-50 mt-2 text-lg">Customize your property search criteria</p>
+        </div>
+
+        <div className="p-8 overflow-y-auto max-h-[calc(95vh-180px)]">
 
           {/* Price Range */}
           <div className="mb-6">
@@ -80,7 +85,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                   onChange={(e) =>
                     setPreferences({ ...preferences, minPrice: Number(e.target.value) })
                   }
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 hover:border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="100000"
                 />
               </div>
@@ -92,7 +97,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                   onChange={(e) =>
                     setPreferences({ ...preferences, maxPrice: Number(e.target.value) })
                   }
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 hover:border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="1000000"
                 />
               </div>
@@ -112,7 +117,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                     setPreferences({ ...preferences, minBedrooms: Number(e.target.value) })
                   }
                   min="0"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 hover:border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                 />
               </div>
               <div>
@@ -125,7 +130,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                   }
                   min="0"
                   step="0.5"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 hover:border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                 />
               </div>
             </div>
@@ -146,8 +151,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                   }
                   className={`px-4 py-2 rounded-lg border-2 font-medium capitalize transition-colors ${
                     preferences.propertyTypes.includes(type)
-                      ? 'bg-blue-600 text-white border-blue-600'
-                      : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400'
+                      ? 'bg-teal-500 text-white border-teal-500 shadow-md'
+                      : 'bg-white text-gray-700 border-gray-300 hover:border-teal-400 hover:border-orange-400'
                   }`}
                 >
                   {type}
@@ -171,8 +176,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                   }
                   className={`px-4 py-2 rounded-lg border-2 font-medium transition-all ${
                     preferences.states.includes(state)
-                      ? 'bg-emerald-500 text-white border-emerald-500 shadow-sm'
-                      : 'bg-white text-gray-700 border-gray-300 hover:border-emerald-400'
+                      ? 'bg-orange-500 text-white border-orange-500 shadow-md'
+                      : 'bg-white text-gray-700 border-gray-300 hover:border-teal-400 hover:border-orange-400'
                   }`}
                 >
                   {state}
@@ -196,8 +201,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                   }
                   className={`px-3 py-2 rounded-lg border-2 text-sm font-medium transition-all ${
                     preferences.mustHaveFeatures.includes(feature)
-                      ? 'bg-emerald-500 text-white border-emerald-500 shadow-sm'
-                      : 'bg-white text-gray-700 border-gray-300 hover:border-emerald-400'
+                      ? 'bg-orange-500 text-white border-orange-500 shadow-md'
+                      : 'bg-white text-gray-700 border-gray-300 hover:border-teal-400 hover:border-orange-400'
                   }`}
                 >
                   {feature}
@@ -218,7 +223,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                   onChange={(e) =>
                     setPreferences({ ...preferences, minSquareFeet: Number(e.target.value) })
                   }
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 hover:border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="0"
                 />
               </div>
@@ -230,7 +235,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                   onChange={(e) =>
                     setPreferences({ ...preferences, maxSquareFeet: Number(e.target.value) })
                   }
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 hover:border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="10000"
                 />
               </div>
@@ -249,7 +254,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                   onChange={(e) =>
                     setPreferences({ ...preferences, minYearBuilt: Number(e.target.value) })
                   }
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 hover:border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="1900"
                 />
               </div>
@@ -262,7 +267,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                     setPreferences({ ...preferences, minLotSize: Number(e.target.value) })
                   }
                   step="0.1"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 hover:border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="0"
                 />
               </div>
@@ -280,7 +285,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                 onChange={(e) =>
                   setPreferences({ ...preferences, maxDaysOnMarket: Number(e.target.value) })
                 }
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 hover:border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                 placeholder="365"
               />
               <p className="text-xs text-gray-500 mt-1">Find fresh listings or motivated sellers</p>
@@ -302,8 +307,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
                   }
                   className={`px-4 py-2 rounded-lg border-2 font-medium transition-all ${
                     preferences.cities.includes(city)
-                      ? 'bg-blue-600 text-white border-blue-600'
-                      : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400'
+                      ? 'bg-teal-500 text-white border-teal-500 shadow-md'
+                      : 'bg-white text-gray-700 border-gray-300 hover:border-teal-400 hover:border-orange-400'
                   }`}
                 >
                   {city}
@@ -349,7 +354,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
               onChange={(e) =>
                 setPreferences({ ...preferences, sortBy: e.target.value as any })
               }
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 hover:border-teal-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
             >
               {sortOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -363,7 +368,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
           <div className="flex gap-3 pt-4 border-t border-gray-200">
             <button
               onClick={onClose}
-              className="flex-1 px-6 py-3 bg-white border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-all active:scale-95"
+              className="flex-1 px-6 py-3 bg-white border-2 border-gray-300 hover:border-teal-400 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-all active:scale-95"
             >
               Cancel
             </button>

@@ -18,6 +18,8 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
   const [showLikedView, setShowLikedView] = useState(false);
   const [hasSetPreferences, setHasSetPreferences] = useState(false);
   const [filteredProperties, setFilteredProperties] = useState<Property[]>(properties);
+  const [lastAction, setLastAction] = useState<'love' | 'pass' | null>(null);
+  const [showCelebration, setShowCelebration] = useState(false);
   const [preferences, setPreferences] = useState<UserPreferences>({
     minPrice: 0,
     maxPrice: 10000000,
@@ -108,16 +110,65 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
     setCurrentIndex(0);
   }, [preferences, properties]);
 
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Don't trigger if modal is open or user is typing
+      if (showPreferences || showLikedView) return;
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+
+      // Only trigger if we have properties to show
+      if (currentIndex >= filteredProperties.length) return;
+
+      switch (e.key) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          handleHate();
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          handleLove();
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentIndex, filteredProperties, likedProperties, passedProperties, showPreferences, showLikedView]);
+
   const handleLove = () => {
     const currentProperty = filteredProperties[currentIndex];
     setLikedProperties([...likedProperties, currentProperty]);
+    setLastAction('love');
+
+    // Show celebration
+    setShowCelebration(true);
+    setTimeout(() => setShowCelebration(false), 2000);
+
     setCurrentIndex(currentIndex + 1);
   };
 
   const handleHate = () => {
     const currentProperty = filteredProperties[currentIndex];
     setPassedProperties([...passedProperties, currentProperty]);
+    setLastAction('pass');
     setCurrentIndex(currentIndex + 1);
+  };
+
+  const handleUndo = () => {
+    if (currentIndex > 0 && lastAction) {
+      // Go back one property
+      setCurrentIndex(currentIndex - 1);
+
+      // Remove from the appropriate list
+      if (lastAction === 'love') {
+        setLikedProperties(likedProperties.slice(0, -1));
+      } else {
+        setPassedProperties(passedProperties.slice(0, -1));
+      }
+
+      setLastAction(null);
+    }
   };
 
   const handleSavePreferences = (newPreferences: UserPreferences) => {
@@ -130,7 +181,7 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
       return (
         <div className="flex flex-col items-center justify-center h-screen relative p-8">
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-20"
+            className="fixed inset-0 bg-cover bg-center opacity-20 pointer-events-none"
             style={{ backgroundImage: 'url(/requirements-to-buy-a-house.webp)' }}
           />
           <div className="relative z-10 flex flex-col items-center">
@@ -171,7 +222,7 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
     return (
       <div className="flex flex-col items-center justify-center h-screen relative p-8">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+          className="fixed inset-0 bg-cover bg-center opacity-20 pointer-events-none"
           style={{ backgroundImage: 'url(/requirements-to-buy-a-house.webp)' }}
         />
         <div className="relative z-10 flex flex-col items-center">
@@ -201,25 +252,25 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
     return (
       <div className="h-full flex flex-col items-center justify-center py-4 relative">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+          className="fixed inset-0 bg-cover bg-center opacity-20 pointer-events-none"
           style={{ backgroundImage: 'url(/requirements-to-buy-a-house.webp)' }}
         />
         <div className="relative z-10 flex flex-col items-center">
-          <div className="mb-8">
-            <img src="/logo.png" alt="HomeMatch" className="h-64 w-auto" />
-          </div>
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl border-4 border-orange-400 p-8 max-w-2xl text-center">
+            {/* Logo inside the card */}
+            <div className="-mb-4 -mt-4">
+              <img src="/logo.png" alt="HomeMatch" className="w-full h-auto object-contain" />
+            </div>
 
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-md text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Welcome to HomeMatch!</h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-4">
               Find your dream home by swiping through properties that match your preferences.
             </p>
-            <p className="text-gray-700 font-medium mb-8">
+            <p className="text-gray-700 font-medium mb-6">
               Let&apos;s start by setting your search criteria
             </p>
             <button
               onClick={() => setShowPreferences(true)}
-              className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-4 px-8 rounded-lg font-bold text-lg transition-all shadow-lg active:scale-95"
+              className="w-full bg-teal-500 hover:bg-teal-600 text-white py-4 px-8 rounded-lg font-bold text-lg transition-all shadow-lg active:scale-95"
             >
               Set My Preferences
             </button>
@@ -239,45 +290,76 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
   return (
     <div className="h-full flex flex-col items-center py-4 overflow-y-auto relative">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-20"
+        className="fixed inset-0 bg-cover bg-center opacity-20 pointer-events-none"
         style={{ backgroundImage: 'url(/requirements-to-buy-a-house.webp)' }}
       />
+
+      {/* Logo - Fixed Bottom Right */}
+      <div className="fixed bottom-4 right-4 z-20 pointer-events-none">
+        <img src="/logo.png" alt="HomeMatch" className="h-64 w-auto opacity-90" />
+      </div>
+
       <div className="relative z-10 flex flex-col items-center w-full">
-        <div className="mb-2 flex-shrink-0">
-          <img src="/logo.png" alt="HomeMatch" className="h-64 w-auto" />
-        </div>
-
-        <div className="flex-shrink-0">
-          <PropertyCard
-            property={filteredProperties[currentIndex]}
-            onLove={handleLove}
-            onHate={handleHate}
-          />
-        </div>
-
-        <div className="w-full max-w-[1000px] mt-3 flex-shrink-0">
-          <div className="flex justify-between items-center text-sm text-gray-600 bg-white/80 backdrop-blur-sm rounded-lg px-4 py-2 shadow-sm">
-            <span>Property {currentIndex + 1} of {filteredProperties.length}</span>
+        {/* Top Bar - Filters and Stats */}
+        <div className="w-full max-w-[500px] mb-2 flex-shrink-0">
+          <div className="flex justify-between items-center text-sm text-gray-700 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
+            <span className="font-semibold">{currentIndex + 1} / {filteredProperties.length}</span>
             <button
               onClick={() => setShowPreferences(true)}
-              className="px-3 py-1 bg-white border border-gray-300 text-gray-700 rounded-lg text-xs font-medium hover:bg-gray-50 transition-colors"
+              className="px-4 py-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 text-white rounded-full text-xs font-semibold hover:scale-105 active:scale-95 transition-all shadow-md"
             >
               ⚙ Filters
             </button>
-            <span className="text-emerald-600 font-semibold">{likedProperties.length} ♥</span>
+            <span className="text-teal-600 font-bold text-lg">{likedProperties.length} ♥</span>
           </div>
         </div>
 
-        {likedProperties.length > 0 && (
-          <div className="mt-3 flex-shrink-0 mb-4">
-            <button
-              onClick={() => setShowLikedView(true)}
-              className="text-blue-600 hover:text-blue-700 font-semibold text-sm"
-            >
-              View {likedProperties.length} Liked Properties
-            </button>
-          </div>
-        )}
+        {/* Keyboard Shortcut Hint */}
+        <div className="text-xs text-gray-500 mb-4 flex gap-4">
+          <span className="bg-white/70 px-2 py-1 rounded">← Pass</span>
+          <span className="bg-white/70 px-2 py-1 rounded">→ Love</span>
+        </div>
+
+        {/* Property Card Stack */}
+        <div className="flex-shrink-0 relative" style={{ height: '680px', width: '600px' }}>
+          {/* Render up to 3 cards in the stack */}
+          {[2, 1, 0].map((offset) => {
+            const cardIndex = currentIndex + offset;
+            if (cardIndex >= filteredProperties.length) return null;
+
+            const isTopCard = offset === 0;
+            const scale = isTopCard ? 1 : 0.92;
+            const translateY = offset * -12;
+            // Offset background cards to alternate sides
+            const translateX = isTopCard ? 0 : (offset === 1 ? 60 : -60);
+            const opacity = isTopCard ? 1 : 0.6;
+            const zIndex = isTopCard ? 30 : 30 - offset;
+            const rotation = isTopCard ? 0 : (offset === 1 ? 8 : -8);
+
+            return (
+              <div
+                key={cardIndex}
+                className="absolute top-0 left-1/2 -translate-x-1/2 transition-all duration-300"
+                style={{
+                  transform: `translateX(calc(-50% + ${translateX}px)) translateY(${translateY}px) scale(${scale}) rotate(${rotation}deg)`,
+                  opacity,
+                  zIndex,
+                  pointerEvents: isTopCard ? 'auto' : 'none',
+                }}
+              >
+                <PropertyCard
+                  property={filteredProperties[cardIndex]}
+                  onLove={isTopCard ? handleLove : () => {}}
+                  onHate={isTopCard ? handleHate : () => {}}
+                  onUndo={isTopCard && currentIndex > 0 && lastAction ? handleUndo : undefined}
+                  showButtons={isTopCard}
+                  likedCount={likedProperties.length}
+                  onViewLiked={() => setShowLikedView(true)}
+                />
+              </div>
+            );
+          })}
+        </div>
 
         <PreferencesModal
           isOpen={showPreferences}
@@ -291,6 +373,19 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
             likedProperties={likedProperties}
             onClose={() => setShowLikedView(false)}
           />
+        )}
+
+        {/* Match Celebration */}
+        {showCelebration && (
+          <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
+            <div className="bg-white/95 backdrop-blur-lg rounded-3xl shadow-2xl p-12 animate-slideUp">
+              <div className="text-center">
+                <div className="text-8xl mb-4 animate-bounce">🎉</div>
+                <h2 className="text-5xl font-bold text-teal-600 mb-2">It&apos;s a Match!</h2>
+                <p className="text-xl text-gray-600">You loved this property!</p>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
