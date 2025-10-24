@@ -223,28 +223,37 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
     }
 
     return (
-      <div className="flex flex-col items-center justify-center h-screen relative p-8">
+      <div className="flex flex-col items-center justify-center h-screen relative p-4 sm:p-8">
         <div
           className="fixed inset-0 bg-cover bg-center opacity-20 pointer-events-none"
           style={{ backgroundImage: 'url(/requirements-to-buy-a-house.webp)' }}
         />
-        <div className="relative z-10 flex flex-col items-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">All Done!</h2>
-          <p className="text-gray-600 mb-8">You&apos;ve reviewed all available properties.</p>
-          <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
-            <p className="text-gray-700 mb-6">
-              You didn&apos;t like any properties. Try adjusting your filters?
+        <div className="relative z-10 flex flex-col items-center animate-fadeIn">
+          <div className="text-6xl sm:text-8xl mb-6 animate-bounce">🏚️</div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 text-center">Tough Crowd!</h2>
+          <p className="text-gray-600 mb-8 text-center text-base sm:text-lg px-4">You&apos;ve seen all {filteredProperties.length} properties and didn&apos;t fall in love with any.</p>
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl border-2 border-teal-400 p-6 sm:p-8 w-full max-w-md">
+            <p className="text-gray-700 mb-6 text-center">
+              Maybe it&apos;s time to lower those standards... or adjust your filters? 😉
             </p>
-            <button
-              onClick={() => {
-                setCurrentIndex(0);
-                setLikedProperties([]);
-                setPassedProperties([]);
-              }}
-              className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-            >
-              Start Over
-            </button>
+            <div className="flex flex-col gap-3">
+              <button
+                onClick={() => setShowPreferences(true)}
+                className="w-full bg-teal-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-teal-600 transition-all shadow-md active:scale-95"
+              >
+                Adjust Filters
+              </button>
+              <button
+                onClick={() => {
+                  setCurrentIndex(0);
+                  setLikedProperties([]);
+                  setPassedProperties([]);
+                }}
+                className="w-full bg-white border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-50 transition-all active:scale-95"
+              >
+                Start Over
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -378,11 +387,15 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
         {/* Match Celebration */}
         {showCelebration && (
           <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
-            <div className="bg-white/95 backdrop-blur-lg rounded-3xl shadow-2xl p-12 animate-slideUp">
+            <div className="bg-gradient-to-br from-teal-500 to-teal-600 rounded-3xl shadow-2xl p-8 sm:p-12 animate-slideUp border-4 border-white mx-4">
               <div className="text-center">
-                <div className="text-8xl mb-4 animate-bounce">🎉</div>
-                <h2 className="text-5xl font-bold text-teal-600 mb-2">It&apos;s a Match!</h2>
-                <p className="text-xl text-gray-600">You loved this property!</p>
+                <div className="flex justify-center gap-2 sm:gap-4 mb-4">
+                  <span className="text-5xl sm:text-6xl animate-bounce" style={{ animationDelay: '0s' }}>🎉</span>
+                  <span className="text-6xl sm:text-8xl animate-bounce" style={{ animationDelay: '0.1s' }}>♥</span>
+                  <span className="text-5xl sm:text-6xl animate-bounce" style={{ animationDelay: '0.2s' }}>🏡</span>
+                </div>
+                <h2 className="text-4xl sm:text-5xl font-bold text-white mb-2 drop-shadow-lg">It&apos;s a Match!</h2>
+                <p className="text-lg sm:text-xl text-white/90">You loved this property!</p>
               </div>
             </div>
           </div>

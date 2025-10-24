@@ -80,13 +80,16 @@ export default function Home() {
 
         {loading ? (
           <div className="h-full flex items-center justify-center">
-            <div className="text-center">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500 mb-4"></div>
-              <p className="text-gray-700 font-medium">Loading properties...</p>
+            <div className="text-center animate-fadeIn">
+              <div className="inline-block animate-spin rounded-full h-16 w-16 border-4 border-teal-200 border-t-teal-500 mb-6"></div>
+              <p className="text-gray-800 font-semibold text-lg mb-2">Finding your perfect home...</p>
+              <p className="text-gray-600 text-sm">This won&apos;t take long</p>
             </div>
           </div>
         ) : (
-          <SwipeView properties={properties} />
+          <div className="animate-fadeIn">
+            <SwipeView properties={properties} />
+          </div>
         )}
       </div>
     </div>

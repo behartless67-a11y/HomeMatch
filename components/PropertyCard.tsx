@@ -194,7 +194,7 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
 
           {/* Image Counter Dots */}
           {property.images.length > 1 && (
-            <div className="absolute top-4 left-4 flex gap-1">
+            <div className="absolute top-4 left-4 flex gap-1 pointer-events-none">
               {property.images.map((_, idx) => (
                 <div
                   key={idx}
@@ -206,26 +206,26 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
             </div>
           )}
 
-          {/* Nav Arrows */}
+          {/* Nav Arrows - wrapped in pointer-events container */}
           {property.images.length > 1 && (
-            <>
+            <div className="absolute inset-0 pointer-events-none">
               <button
                 onClick={prevImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-white hover:scale-110 transition-all duration-200"
+                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-white hover:scale-110 transition-all duration-200 pointer-events-auto"
               >
                 ‹
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-white hover:scale-110 transition-all duration-200"
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-white hover:scale-110 transition-all duration-200 pointer-events-auto"
               >
                 ›
               </button>
-            </>
+            </div>
           )}
 
           {/* Price & Location Overlay - Bottom of Image */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white pointer-events-none">
             <h3 className="text-4xl font-bold mb-1">{formatPrice(property.price)}</h3>
             <p className="text-lg opacity-90 mb-2">{property.city}, {property.state}</p>
             <div className="flex gap-3 text-sm">
