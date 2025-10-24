@@ -94,9 +94,9 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
 
   return (
     <div className="flex flex-col items-center w-full">
-      {/* Main Card - Tinder Style */}
+      {/* Main Card - Full Screen Mobile, Card on Desktop */}
       <motion.div
-        className="w-[calc(100vw-16px)] sm:w-full sm:max-w-[500px] bg-white rounded-2xl shadow-2xl overflow-hidden relative cursor-pointer"
+        className="w-full h-[100dvh] sm:w-full sm:max-w-[500px] sm:h-auto bg-white sm:rounded-2xl sm:shadow-2xl overflow-hidden relative cursor-pointer"
         style={{ x, rotate, opacity }}
         drag={showButtons ? 'x' : false}
         dragConstraints={{ left: 0, right: 0 }}
@@ -184,8 +184,8 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
           )}
         </div>
 
-        {/* Image Section - Top */}
-        <div className="relative w-full h-[60vh] sm:h-[500px] bg-gray-200">
+        {/* Image Section - Full Screen on Mobile */}
+        <div className="relative w-full h-full sm:h-[500px] bg-gray-200">
           <img
             src={property.images[currentImageIndex]}
             alt={property.address}
@@ -225,26 +225,58 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
           )}
 
           {/* Price & Location Overlay - Bottom of Image */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white pointer-events-none">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 pb-20 sm:pb-6 text-white pointer-events-none">
             <h3 className="text-4xl font-bold mb-1">{formatPrice(property.price)}</h3>
             <p className="text-lg opacity-90 mb-2">{property.city}, {property.state}</p>
-            <div className="flex gap-3 text-sm">
+            <div className="flex gap-3 text-sm mb-3">
               <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">{property.bedrooms} bed</span>
               <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">{property.bathrooms} bath</span>
               <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">{property.squareFeet} sqft</span>
             </div>
+            <p className="text-sm opacity-80 leading-relaxed line-clamp-3 sm:hidden">{property.description}</p>
           </div>
+
+          {/* Action Buttons Overlay - Mobile Only - TOP */}
+          {showButtons && (
+            <div className="absolute top-20 left-0 right-0 flex gap-4 items-center justify-center sm:hidden z-40">
+              {/* Pass Button */}
+              <button
+                onClick={(e) => { e.stopPropagation(); onHate(); }}
+                className="w-16 h-16 bg-white/90 backdrop-blur-sm border-3 border-orange-400 text-orange-500 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-200 flex items-center justify-center text-3xl font-bold"
+              >
+                ✕
+              </button>
+
+              {/* Undo Button */}
+              {onUndo && (
+                <button
+                  onClick={(e) => { e.stopPropagation(); onUndo(); }}
+                  className="w-12 h-12 bg-white/90 backdrop-blur-sm border-2 border-teal-400 text-teal-500 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-200 flex items-center justify-center"
+                >
+                  <RotateCcw className="w-5 h-5" />
+                </button>
+              )}
+
+              {/* Love Button */}
+              <button
+                onClick={(e) => { e.stopPropagation(); onLove(); }}
+                className="w-16 h-16 bg-teal-500/90 backdrop-blur-sm text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-200 flex items-center justify-center text-3xl font-bold"
+              >
+                ♥
+              </button>
+            </div>
+          )}
         </div>
 
-        {/* Info Section - Below Image */}
-        <div className="p-6">
+        {/* Info Section - Below Image (Desktop Only) */}
+        <div className="p-6 hidden sm:block">
           <p className="text-sm text-gray-700 leading-relaxed line-clamp-3">{property.description}</p>
         </div>
       </motion.div>
 
-      {/* Tinder-Style Action Buttons Below Card */}
+      {/* Tinder-Style Action Buttons Below Card (Desktop Only) */}
       {showButtons && (
-        <div className="flex flex-col items-center gap-4 mt-6">
+        <div className="hidden sm:flex flex-col items-center gap-4 mt-6">
           {/* Main Action Buttons */}
           <div className="flex gap-4 items-center justify-center">
             {/* Pass Button - Updated to teal/coral */}

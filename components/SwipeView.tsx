@@ -309,8 +309,8 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
       </div>
 
       <div className="relative z-10 flex flex-col items-center w-full my-auto">
-        {/* Top Bar - Filters and Stats */}
-        <div className="w-full max-w-[500px] mb-2 flex-shrink-0">
+        {/* Top Bar - Filters and Stats (Desktop Only) */}
+        <div className="hidden sm:block w-full max-w-[500px] mb-2 flex-shrink-0">
           <div className="flex justify-between items-center text-sm text-gray-700 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
             <span className="font-semibold">{currentIndex + 1} / {filteredProperties.length}</span>
             <button
@@ -323,11 +323,6 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
           </div>
         </div>
 
-        {/* Keyboard Shortcut Hint */}
-        <div className="text-xs text-gray-500 mb-4 flex gap-4">
-          <span className="bg-white/70 px-2 py-1 rounded">← Pass</span>
-          <span className="bg-white/70 px-2 py-1 rounded">→ Love</span>
-        </div>
 
         {/* Property Card Stack */}
         <div className="flex-shrink-0 relative w-full max-w-[600px]" style={{ minHeight: '700px' }}>
