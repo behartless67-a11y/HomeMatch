@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(timeout 10 bash:*)",
+      "Bash(npm run dev:*)",
+      "Bash(python update-descriptions.py:*)",
+      "Bash(python:*)",
+      "Bash(taskkill:*)",
+      "Bash(timeout 15 bash:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
