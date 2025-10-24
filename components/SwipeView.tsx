@@ -265,11 +265,8 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
               <img src="/logo.png" alt="HomeMatch" className="w-full h-auto object-contain" />
             </div>
 
-            <p className="text-gray-600 mb-4">
-              Find your dream home by swiping through properties that match your preferences.
-            </p>
-            <p className="text-gray-700 font-medium mb-6">
-              Let&apos;s start by setting your search criteria
+            <p className="text-gray-800 text-xl font-bold mb-6">
+              No Commitment Issues Here - Unless It&apos;s a 30-Year Mortgage
             </p>
             <button
               onClick={() => setShowPreferences(true)}
