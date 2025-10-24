@@ -206,22 +206,22 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
             </div>
           )}
 
-          {/* Nav Arrows - wrapped in pointer-events container */}
+          {/* Nav Arrows - buttons only intercept clicks */}
           {property.images.length > 1 && (
-            <div className="absolute inset-0 pointer-events-none">
+            <>
               <button
-                onClick={prevImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-white hover:scale-110 transition-all duration-200 pointer-events-auto"
+                onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-white hover:scale-110 transition-all duration-200 z-10"
               >
                 ‹
               </button>
               <button
-                onClick={nextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-white hover:scale-110 transition-all duration-200 pointer-events-auto"
+                onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-white hover:scale-110 transition-all duration-200 z-10"
               >
                 ›
               </button>
-            </div>
+            </>
           )}
 
           {/* Price & Location Overlay - Bottom of Image */}

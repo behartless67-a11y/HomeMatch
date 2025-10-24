@@ -297,7 +297,7 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
   }
 
   return (
-    <div className="h-full flex flex-col items-center py-4 overflow-y-auto relative">
+    <div className="h-full flex flex-col items-center justify-center py-4 overflow-y-auto relative">
       <div
         className="fixed inset-0 bg-cover bg-center opacity-20 pointer-events-none"
         style={{ backgroundImage: 'url(/requirements-to-buy-a-house.webp)' }}
@@ -308,7 +308,7 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
         <img src="/logo.png" alt="HomeMatch" className="h-64 w-auto opacity-90" />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center w-full">
+      <div className="relative z-10 flex flex-col items-center w-full my-auto">
         {/* Top Bar - Filters and Stats */}
         <div className="w-full max-w-[500px] mb-2 flex-shrink-0">
           <div className="flex justify-between items-center text-sm text-gray-700 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
@@ -330,7 +330,7 @@ export const SwipeView: React.FC<SwipeViewProps> = ({ properties }) => {
         </div>
 
         {/* Property Card Stack */}
-        <div className="flex-shrink-0 relative" style={{ height: '680px', width: '600px' }}>
+        <div className="flex-shrink-0 relative w-full max-w-[600px]" style={{ minHeight: '700px' }}>
           {/* Render up to 3 cards in the stack */}
           {[2, 1, 0].map((offset) => {
             const cardIndex = currentIndex + offset;
