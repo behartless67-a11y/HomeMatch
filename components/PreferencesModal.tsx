@@ -78,24 +78,24 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header with colored background */}
-        <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-8 shadow-lg">
+        <div className="bg-gradient-to-r from-teal-500 to-teal-600 p-4 sm:p-8 shadow-lg">
           <div className="flex justify-between items-center">
-            <h2 className="text-4xl font-bold text-white drop-shadow-lg">Set Your Preferences</h2>
+            <h2 className="text-2xl sm:text-4xl font-bold text-white drop-shadow-lg">Set Your Preferences</h2>
             <button
               onClick={onClose}
-              className="text-white hover:text-orange-300 text-4xl font-bold hover:rotate-90 transition-all duration-300"
+              className="text-white hover:text-orange-300 text-3xl sm:text-4xl font-bold hover:rotate-90 transition-all duration-300"
             >
               ×
             </button>
           </div>
-          <p className="text-teal-50 mt-2 text-lg">Customize your property search criteria</p>
+          <p className="text-teal-50 mt-1 sm:mt-2 text-sm sm:text-lg">Customize your property search criteria</p>
         </div>
 
-        <div className="p-8 overflow-y-auto max-h-[calc(95vh-180px)]">
+        <div className="p-4 sm:p-8 overflow-y-auto max-h-[calc(95vh-140px)] sm:max-h-[calc(95vh-180px)]">
 
           {/* Price Range */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">Price Range</h3>
+          <div className="mb-4 sm:mb-6">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">Price Range</h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm text-gray-600 mb-1">Min Price</label>
@@ -125,8 +125,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
           </div>
 
           {/* Bedrooms & Bathrooms */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">Minimum Requirements</h3>
+          <div className="mb-4 sm:mb-6">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">Minimum Requirements</h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm text-gray-600 mb-1">Min Bedrooms</label>
@@ -157,8 +157,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
           </div>
 
           {/* Property Types */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">Property Types</h3>
+          <div className="mb-4 sm:mb-6">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">Property Types</h3>
             <div className="flex flex-wrap gap-2">
               {propertyTypeOptions.map((type) => (
                 <button
@@ -182,8 +182,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
           </div>
 
           {/* States */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">States</h3>
+          <div className="mb-4 sm:mb-6">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">States</h3>
             <div className="flex flex-wrap gap-2">
               {stateOptions.map((state) => (
                 <button
@@ -207,8 +207,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
           </div>
 
           {/* Must-Have Features */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">Must-Have Features</h3>
+          <div className="mb-4 sm:mb-6">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">Must-Have Features</h3>
             <div className="flex flex-wrap gap-2">
               {featureOptions.map((feature) => (
                 <button
@@ -232,8 +232,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
           </div>
 
           {/* Square Footage */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">Square Footage</h3>
+          <div className="mb-4 sm:mb-6">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">Square Footage</h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm text-gray-600 mb-1">Min Sq Ft</label>
@@ -263,8 +263,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
           </div>
 
           {/* Year Built & Lot Size */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">Property Age & Size</h3>
+          <div className="mb-4 sm:mb-6">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">Property Age & Size</h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm text-gray-600 mb-1">Min Year Built</label>
@@ -295,8 +295,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
           </div>
 
           {/* Days on Market */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">Listing Freshness</h3>
+          <div className="mb-4 sm:mb-6">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">Listing Freshness</h3>
             <div>
               <label className="block text-sm text-gray-600 mb-1">Max Days on Market</label>
               <input
@@ -313,8 +313,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
           </div>
 
           {/* Cities */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">Cities/Neighborhoods</h3>
+          <div className="mb-4 sm:mb-6">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">Cities/Neighborhoods</h3>
             <div className="flex flex-wrap gap-2">
               {cityOptions.map((city) => (
                 <button
@@ -338,8 +338,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
           </div>
 
           {/* Parking */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">Parking</h3>
+          <div className="mb-4 sm:mb-6">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">Parking</h3>
             <div>
               <label className="block text-sm text-gray-600 mb-1">Minimum Parking Spots</label>
               <input
@@ -357,8 +357,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
           </div>
 
           {/* Special Filters (Checkboxes) */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">Special Requirements</h3>
+          <div className="mb-4 sm:mb-6">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">Special Requirements</h3>
             <div className="grid grid-cols-2 gap-4">
               <label className="flex items-center gap-3 cursor-pointer">
                 <input
@@ -408,8 +408,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
           </div>
 
           {/* Sort By */}
-          <div className="mb-6">
-            <h3 className="font-semibold text-gray-900 mb-3">Sort By</h3>
+          <div className="mb-4 sm:mb-6">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-2 sm:mb-3">Sort By</h3>
             <select
               value={preferences.sortBy}
               onChange={(e) =>
