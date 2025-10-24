@@ -26,9 +26,9 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
   const x = useMotionValue(0);
   const rotate = useTransform(x, [-200, 200], [-30, 30]);
   const opacity = useTransform(x, [-200, -150, 0, 150, 200], [0, 1, 1, 1, 0]);
-  // Make overlays appear faster (at 75px instead of 150px)
-  const likeOpacity = useTransform(x, [0, 75], [0, 1]);
-  const nopeOpacity = useTransform(x, [-75, 0], [1, 0]);
+  // Make overlays appear much faster (at 40px) for better mobile feedback
+  const likeOpacity = useTransform(x, [0, 40], [0, 1]);
+  const nopeOpacity = useTransform(x, [-40, 0], [1, 0]);
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-US', {
@@ -62,10 +62,13 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onLove, on
   };
 
   const handleDragEnd = (_: any, info: any) => {
-    // Lower threshold for mobile - 100px instead of 150px
-    const threshold = 100;
-    if (Math.abs(info.offset.x) > threshold) {
-      // Swiped far enough - trigger action
+    // Much lower threshold for mobile - 60px or fast swipe velocity
+    const threshold = 60;
+    const velocity = Math.abs(info.velocity.x);
+    const swipeDistance = Math.abs(info.offset.x);
+
+    // Trigger if: 1) dragged past threshold, OR 2) fast swipe (velocity > 500)
+    if (swipeDistance > threshold || velocity > 500) {
       setExitX(info.offset.x > 0 ? 1000 : -1000);
       if (info.offset.x > 0) {
         onLove();
