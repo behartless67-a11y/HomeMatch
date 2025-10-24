@@ -15,10 +15,7 @@ export const mockProperties: Property[] = [
     propertyType: 'townhouse',
     yearBuilt: 2020,
     images: [
-      'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format&fit=crop',
     ],
     description: 'Step into urban luxury with this contemporary townhouse in the heart of downtown Charlottesville. Built in 2020, this stunning 3-bedroom home features an entertainer\'s dream rooftop terrace with panoramic views of the Blue Ridge Mountains. Floor-to-ceiling windows flood the open-concept living space with natural light, while smart home technology puts comfort at your fingertips. Walk to award-winning restaurants on the Downtown Mall, catch a show at the Paramount Theater, or stroll to UVA Grounds in minutes. The attached garage and modern finishes make this the perfect lock-and-go lifestyle for professionals.',
     features: ['Rooftop Deck', 'Hardwood Floors', 'Granite Countertops', 'Smart Home', 'Garage'],
@@ -43,8 +40,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 1985,
     images: [
-      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&auto=format&fit=crop',
     ],
     description: 'Welcome to this charming 4-bedroom colonial on historic Rugby Road, where classic architecture meets modern family living. The spacious 2,800 sq ft layout offers room for everyone, with a formal dining room perfect for holiday gatherings and a sun-drenched family room opening to an expansive deck. The fenced backyard is an oasis for kids and pets, with mature trees providing natural shade. Located just blocks from UVA, this home has been lovingly maintained with recent HVAC updates and gleaming hardwood floors throughout. The  perfect blend of location, space, and character.',
     features: ['Fireplace', 'Deck', 'Fenced Yard', 'Hardwood Floors', 'Central AC'],
@@ -65,8 +61,7 @@ export const mockProperties: Property[] = [
     propertyType: 'condo',
     yearBuilt: 2018,
     images: [
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&auto=format&fit=crop',
     ],
     description: 'Embrace downtown living in this sleek 2-bedroom condo with breathtaking mountain views from your private balcony. Built in 2018, this modern sanctuary features an open kitchen with stainless steel appliances and quartz countertops, perfect for the home chef. In-unit laundry means no more trips to the basement, while building amenities including a fitness center and resort-style pool add resort-style convenience. Walk to coffee shops, breweries, and the Downtown Mall, or hop on the free trolley to UVA. Low-maintenance living at its finest in Charlottesville\'s most vibrant neighborhood.',
     features: ['Balcony', 'Stainless Steel Appliances', 'In-Unit Laundry', 'Gym Access', 'Pool'],
@@ -86,8 +81,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 1920,
     images: [
-      'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=1200&auto=format&fit=crop',
     ],
     description: 'Fall in love with this beautifully renovated 1920s bungalow in the trendy Belmont neighborhood. Original hardwood floors, craftsman details, and a charming front porch transport you back in time, while the completely updated kitchen and bathrooms provide modern convenience. The open floor plan is perfect for entertaining, flowing seamlessly from the chef\'s kitchen to the cozy living room with built-in bookcases. Walk to Belmont BBQ, Milli Coffee, and the quirky shops that make this neighborhood special. A true gem that honors its history while embracing contemporary style.',
     features: ['Hardwood Floors', 'Updated Kitchen', 'Front Porch', 'Walk to Downtown', 'Central AC'],
@@ -108,8 +102,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2015,
     images: [
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&auto=format&fit=crop',
     ],
     description: 'This exceptional craftsman home on Carlton Road showcases impeccable attention to detail in every room. The gourmet kitchen features custom cabinetry, professional-grade appliances, and a massive island that seats six. Relax on the screened porch overlooking a private, wooded backyard - your own nature retreat just minutes from downtown. The luxurious master suite occupies the entire second floor with spa bathroom, walk-in closet, and private balcony. With 3,200 sq ft of thoughtfully designed living space and a two-car garage, this home checks every box for discerning buyers.',
     features: ['Gourmet Kitchen', 'Screened Porch', 'Hardwood Floors', 'Fireplace', 'Garage'],
@@ -130,8 +123,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2010,
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&auto=format&fit=crop',
     ],
     description: 'Discover mountain living in charming Crozet with this inviting 4-bedroom home offering spectacular Blue Ridge Mountain views. The open floor plan is ideal for family living, with vaulted ceilings and large windows that frame the stunning scenery. Enjoy morning coffee on the expansive deck while watching fog roll through the valleys, or cozy up by the stone fireplace on winter evenings. Crozet\'s downtown is walkable, featuring the beloved Mudhouse Coffee, farm-to-table restaurants, and the historic Starr Hill Brewery. With top-rated Western Albemarle schools and easy access to hiking trails, this is mountain living at its best.',
     features: ['Mountain Views', 'Deck', 'Fireplace', 'Open Floor Plan', 'Garage'],
@@ -152,8 +144,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2005,
     images: [
-      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&auto=format&fit=crop',
     ],
     description: 'This well-maintained ranch home on Three Notch\'d Road offers the perfect entry point into Crozet\'s desirable community. Single-level living means no stairs to navigate, with all bedrooms and living spaces on one convenient floor. The updated bathrooms feature modern fixtures and tile work, while the attached garage provides covered parking and extra storage. The fenced backyard is perfect for gardening or pets, with room for a playset. Located near Claudius Crozet Park and the scenic Greenway Trail, outdoor recreation is right at your doorstep. A smart choice for first-time buyers or those seeking easy-living convenience.',
     features: ['Single Level', 'Fenced Yard', 'Updated Bathrooms', 'Garage', 'Patio'],
@@ -174,8 +165,7 @@ export const mockProperties: Property[] = [
     propertyType: 'townhouse',
     yearBuilt: 1995,
     images: [
-      'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=1200&auto=format&fit=crop',
     ],
     description: 'Affordable townhouse living in a prime north side location makes this 2-bedroom gem a smart investment. The recently updated kitchen features new cabinets and appliances, while the private patio is perfect for grilling and relaxing after work. Community amenities include a sparkling pool for hot summer days and ample guest parking. Located on Hydraulic Road with easy access to shopping, restaurants, and major employers like UVA and the hospital. Low HOA fees and turnkey condition make this an excellent choice for first-time buyers or savvy investors seeking rental income.',
     features: ['Updated Kitchen', 'Patio', 'Storage', 'Pool', 'Central AC'],
@@ -195,8 +185,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2018,
     images: [
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?w=1200&auto=format&fit=crop',
     ],
     description: 'Experience estate living on this magnificent 5-acre property in peaceful Earlysville. This luxurious home boasts a resort-style pool with covered cabana, perfect for summer entertaining. Inside, the gourmet kitchen with double islands and butler\'s pantry flows into the great room with soaring ceilings and wall of windows showcasing mountain views. Five spacious bedrooms include a main-level master suite and upstairs bonus room ideal for home office or gym. The three-car garage and circular driveway provide parking for guests. Just 15 minutes from Charlottesville but feeling worlds away - the perfect country escape.',
     features: ['Pool', 'Mountain Views', 'Gourmet Kitchen', 'Hardwood Floors', 'Garage'],
@@ -217,8 +206,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 1890,
     images: [
-      'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1598228723793-52759bba239c?w=1200&auto=format&fit=crop',
     ],
     description: 'Step back in time in this meticulously restored 1890 Victorian mansion on prestigious Monticello Road. Original heart pine floors, 12-foot ceilings with ornate plasterwork, and stunning pocket doors showcase period details throughout. Modern updates include a chef\'s kitchen with Wolf range, renovated bathrooms, and updated systems, all done with respect to the home\'s historic character. The separate carriage house has been converted to a guest suite or home office. Mature gardens, a wraparound porch, and a half-acre lot complete this extraordinary property. A rare opportunity to own a piece of Charlottesville history.',
     features: ['Historic Details', 'Hardwood Floors', 'Updated Kitchen', 'Fireplace', 'Garage'],
@@ -239,8 +227,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 1955,
     images: [
-      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?w=1200&auto=format&fit=crop',
     ],
     description: 'This 3-bedroom starter home on Cherry Avenue offers incredible potential for buyers with vision. The bones are solid with hardwood floors hidden under carpet, good roof, and spacious rooms throughout. The large lot provides ample space for outdoor projects or future expansion. Some cosmetic updates are needed, but the price reflects the opportunity to customize to your taste. Located on a quiet street in an established neighborhood with good schools nearby. Perfect for handy buyers, flippers, or investors - bring your imagination and make this house your dream home.',
     features: ['Hardwood Floors', 'Large Lot', 'Fenced Yard', 'Storage Shed', 'Central AC'],
@@ -261,8 +248,7 @@ export const mockProperties: Property[] = [
     propertyType: 'condo',
     yearBuilt: 2015,
     images: [
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1597211833712-5e41faa202ea?w=1200&auto=format&fit=crop',
     ],
     description: 'Move-in ready condo living near UVA makes this 2-bedroom unit perfect for young professionals, grad students, or as an investment property. Built in 2015, everything is modern and efficient with an open floor plan and contemporary finishes. The balcony overlooks green space, providing a peaceful spot for morning coffee. In-unit washer/dryer, assigned parking, and pet-friendly policies add convenience. Walk to UVA Corner for dining and nightlife, or bike to classes in minutes. The complex features a pool for summer fun. Low-maintenance living in a prime location - what more could you want?',
     features: ['Walk to UVA', 'Balcony', 'In-Unit Laundry', 'Parking', 'Pool'],
@@ -282,8 +268,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2000,
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1594845303003-8939f1f97a0f?w=1200&auto=format&fit=crop',
     ],
     description: 'This well-loved split-level on Old Lynchburg Road offers fantastic value and space for growing families. The finished basement adds valuable living space - perfect as a playroom, home gym, or teen suite. Recent HVAC system and water heater provide peace of mind. The fenced backyard is ideal for kids and pets, while the deck is perfect for grilling out. Three bedrooms upstairs plus office/den on main level provide flexible space. Located near Greenbrier Park and excellent schools, with easy access to Route 29. Solid, spacious, and move-in ready.',
     features: ['Finished Basement', 'Fenced Yard', 'Deck', 'Storage', 'Central AC'],
@@ -304,8 +289,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2012,
     images: [
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1593696954816-135d6c0d6f59?w=1200&auto=format&fit=crop',
     ],
     description: 'Contemporary design meets functional living in this stunning 4-bedroom home on Avon Street. The open-concept main level is an entertainer\'s dream with the kitchen island as the centerpiece, flowing seamlessly to the dining and living areas. Smart home features control lights, temperature, and security from your phone. Upstairs, a luxurious master suite offers a spa bathroom with soaking tub and separate shower. The covered patio extends your living space outdoors, perfect for year-round enjoyment. Built in 2012, this home shows pride of ownership with professional landscaping and meticulous maintenance throughout.',
     features: ['Open Floor Plan', 'Gourmet Kitchen', 'Hardwood Floors', 'Patio', 'Smart Home'],
@@ -326,8 +310,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 1995,
     images: [
-      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1591474200742-8e512e6f98f8?w=1200&auto=format&fit=crop',
     ],
     description: 'Riverfront living in historic Scottsville offers a serene escape from city life. This charming home sits on an oversized lot with breathtaking views of the James River from the expansive deck. Watch kayakers paddle by, spot blue herons fishing, and enjoy spectacular sunsets over the water. Inside, the open living room with stone fireplace is cozy yet spacious, while the workshop/shed is perfect for hobbies or storage. Dock access for kayaking and fishing is just steps away. Downtown Scottsville\'s antique shops and riverside park are walkable. River life awaits!',
     features: ['Deck', 'Fireplace', 'Hardwood Floors', 'Large Yard', 'Central AC'],
@@ -348,8 +331,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2016,
     images: [
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=1200&auto=format&fit=crop',
     ],
     description: 'This architectural masterpiece on Garth Road redefines luxury living in Charlottesville. Floor-to-ceiling windows frame mountain views from nearly every room of this 6,500 sq ft estate. The infinity-edge pool seems to spill into the landscape, while the outdoor kitchen and fireplace create an al fresco entertaining paradise. Inside, a climate-controlled wine cellar stores 500+ bottles, the home theater features stadium seating for 12, and the chef\'s kitchen with dual islands is a culinary dream. Smart home automation controls everything from lighting to window shades. Situated on one acre with guest house and three-car garage - this is estate living at its finest.',
     features: ['Pool', 'Gourmet Kitchen', 'Mountain Views', 'Smart Home', 'Garage'],
@@ -370,8 +352,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2019,
     images: [
-      'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1588854337221-4cf9fa96125d?w=1200&auto=format&fit=crop',
     ],
     description: 'Luxury meets convenience in this spectacular modern estate near Boar\'s Head Resort. An elevator serves all three levels, while the rooftop terrace offers 360-degree views of the Blue Ridge Mountains and city lights. The gourmet kitchen features top-of-the-line Wolf and Sub-Zero appliances, and the wine room with glass walls showcases your collection. Five bedroom suites each have en-suite bathrooms, perfect for multi-generational living or hosting guests. The four-car garage has EV charging stations, and a whole-house generator ensures you never lose power. Walking distance to Boar\'s Head amenities including golf, spa, and fine dining.',
     features: ['Rooftop Deck', 'Gourmet Kitchen', 'Hardwood Floors', 'Fireplace', 'Garage'],
@@ -392,8 +373,7 @@ export const mockProperties: Property[] = [
     propertyType: 'apartment',
     yearBuilt: 2010,
     images: [
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&auto=format&fit=crop',
     ],
     description: 'This efficient studio apartment on Emmet Street is perfect for students, young professionals, or investors seeking rental income. The 2010 construction means everything is modern and well-maintained. The complex offers fantastic amenities including a 24-hour fitness center, resort-style pool, and secure entry. Walk to UVA classes in under 10 minutes, or use the free UVA shuttle stop right outside. The low HOA includes water, trash, and access to all amenities. Perfect as a first home, pied-à-terre, or addition to your investment portfolio. Location, location, location!',
     features: ['Walk to UVA', 'Pool', 'Gym Access', 'Parking', 'Central AC'],
@@ -413,8 +393,7 @@ export const mockProperties: Property[] = [
     propertyType: 'condo',
     yearBuilt: 2021,
     images: [
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&auto=format&fit=crop',
     ],
     description: 'Brand new luxury living on the Downtown Mall brings cosmopolitan style to Charlottesville. This 2-bedroom condo features floor-to-ceiling windows, European-style cabinetry, and quartz countertops throughout. Building amenities include 24/7 concierge service, rooftop deck with outdoor kitchen and fire pit, and covered parking. Step outside to world-class restaurants, the historic Paramount Theater, and boutique shopping. Walk to farmer\'s markets, First Fridays art shows, and summer concerts. This is urban living at its finest - no car needed! The modern lifestyle you\'ve been dreaming of awaits.',
     features: ['Rooftop Deck', 'Granite Countertops', 'In-Unit Laundry', 'Parking', 'Pool'],
@@ -434,8 +413,7 @@ export const mockProperties: Property[] = [
     propertyType: 'townhouse',
     yearBuilt: 2017,
     images: [
-      'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1580216643062-cf460548a66a?w=1200&auto=format&fit=crop',
     ],
     description: 'This end-unit townhouse in Pantops offers the perfect combination of privacy, views, and convenience. Being an end unit means extra windows and natural light, plus you only share one wall. The two-car garage provides direct access into the home - perfect for groceries or rainy days. Mountain views from the deck make morning coffee special, while the community pool is great for summer fun. Pantops shopping is right outside your door including Whole Foods, Trader Joe\'s, and numerous restaurants. Easy highway access makes commuting a breeze. Low-maintenance living with all the perks.',
     features: ['Mountain Views', 'Garage', 'Deck', 'Granite Countertops', 'Pool'],
@@ -455,8 +433,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2008,
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1200&auto=format&fit=crop',
     ],
     description: 'Family-friendly living shines in this spacious Pantops home with finished basement adding valuable square footage. The basement is perfect as a kids\' playroom, home theater, or teenager\'s retreat with full bathroom. Upstairs, four generous bedrooms include a master suite with walk-in closet. The fenced backyard is ideal for swing sets and summer barbecues, while the deck provides a quiet spot for parents to relax. Updated kitchen with granite counters and stainless appliances makes meal prep a pleasure. Walk to Pantops Shopping Center for groceries and errands. Great schools and family-friendly neighborhood complete the package.',
     features: ['Finished Basement', 'Fenced Yard', 'Deck', 'Hardwood Floors', 'Central AC'],
@@ -477,8 +454,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2014,
     images: [
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1576941089067-2de3c901e126?w=1200&auto=format&fit=crop',
     ],
     description: 'Modern farmhouse charm meets mountain luxury in this stunning Crozet home on two acres. The front porch with rocking chairs welcomes you home, while inside, shiplap accents and reclaimed wood beams create warmth. The gourmet kitchen features a farmhouse sink, butcher block island, and commercial-grade range - perfect for the home chef. Four bedrooms include a main-level master suite for single-level living. The barn provides endless possibilities - workshop, art studio, or future guest quarters. Mountain views, country charm, and close to Crozet\'s downtown make this a rare find.',
     features: ['Mountain Views', 'Hardwood Floors', 'Gourmet Kitchen', 'Deck', 'Garage'],
@@ -499,8 +475,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2005,
     images: [
-      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1575517111478-7f6afd0973db?w=1200&auto=format&fit=crop',
     ],
     description: 'Escape to your own private paradise on this 10-acre estate in White Hall. A winding driveway leads to this beautiful home surrounded by pastures, pond, and mountain views. The property is perfect for horses with barn, fencing, and plenty of grazing land. Inside, five bedrooms provide space for family and guests, while multiple living areas offer room to spread out. The wrap-around porch is ideal for morning coffee watching deer graze in the fields. Privacy, tranquility, and natural beauty - yet just 20 minutes from Charlottesville. Your country estate awaits.',
     features: ['Mountain Views', 'Hardwood Floors', 'Fireplace', 'Deck', 'Garage'],
@@ -521,8 +496,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 1970,
     images: [
-      'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=1200&auto=format&fit=crop',
     ],
     description: 'Investors take note: this 5-bedroom home near UVA on Wertland Street has strong rental history with current leases in place. The location is unbeatable - students can walk to classes, the Corner, and downtown. Off-street parking for 4+ cars is a huge selling point in this neighborhood. The large lot provides yard space rare for student housing. Solid bones, good systems, and turnkey rental income make this an excellent addition to any investment portfolio. Financials available upon request. Don\'t miss this opportunity in Charlottesville\'s hottest rental market.',
     features: ['Walk to UVA', 'Hardwood Floors', 'Large Lot', 'Parking', 'Central AC'],
@@ -543,8 +517,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 1960,
     images: [
-      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&auto=format&fit=crop',
     ],
     description: 'This unique duplex near the Corner offers dual rental income potential or live-in-one, rent-the-other flexibility. Each 2BR/1BA unit has separate entrances and utilities, making management simple. Current tenants are excellent with long-term lease history. The location is gold - walking distance to UVA, the Corner restaurants and bars, and downtown. Recent updates include new roof, HVAC systems, and water heaters. The numbers work great for investors, or perfect for owner-occupant seeking rental income to offset mortgage. A smart real estate play in a prime location.',
     features: ['Hardwood Floors', 'Parking', 'Fenced Yard', 'Updated Bathrooms', 'Central AC'],
@@ -565,8 +538,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2020,
     images: [
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&auto=format&fit=crop',
     ],
     description: 'This modern farmhouse in prestigious Keswick epitomizes luxury countryside living. The 5-acre property includes a charming guest cottage - perfect for visitors, rental income, or home office. The main house features soaring ceilings with exposed beams, a stunning kitchen with marble counters, and a spa-like master bath with freestanding tub. The saltwater pool and outdoor kitchen make entertaining effortless. Located near Keswick Hall and minutes from Castle Hill Cider, you\'re part of an exclusive community yet close to Charlottesville\'s amenities. Country club living without the membership fees.',
     features: ['Pool', 'Mountain Views', 'Hardwood Floors', 'Gourmet Kitchen', 'Garage'],
@@ -587,8 +559,7 @@ export const mockProperties: Property[] = [
     propertyType: 'townhouse',
     yearBuilt: 2016,
     images: [
-      'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&auto=format&fit=crop',
     ],
     description: 'Low-maintenance townhouse living near Barracks Shopping makes daily life convenient in this well-maintained home. The attached two-car garage means never scraping ice off your windshield again, while the HOA handles exterior maintenance and snow removal. Inside, hardwood floors and updated kitchen with granite counters show pride of ownership. The patio is perfect for container gardens and outdoor dining. Walk to Whole Foods, Trader Joe\'s, Target, and dozens of restaurants. Perfect for professionals who want to spend weekends enjoying life, not doing yard work. Turnkey convenience at a great price.',
     features: ['Garage', 'Hardwood Floors', 'Granite Countertops', 'Patio', 'Central AC'],
@@ -608,8 +579,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 1948,
     images: [
-      'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=1200&auto=format&fit=crop',
     ],
     description: 'Calling all DIY enthusiasts and savvy investors! This 2-bedroom home in an established neighborhood has incredible bones and huge potential. Original hardwood floors peek out from under carpet, waiting to be restored to their former glory. The large lot offers room for expansion or amazing outdoor space. Some TLC is needed throughout, but the structure is sound and the location is excellent. With the right vision and some elbow grease, this could be your dream home or a profitable flip. Sold as-is, priced to allow for renovations. Bring your imagination!',
     features: ['Hardwood Floors', 'Large Lot', 'Fenced Yard', 'Storage Shed', 'Central AC'],
@@ -630,8 +600,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2022,
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&auto=format&fit=crop',
     ],
     description: 'Brand new construction with builder warranty makes this 4-bedroom home a worry-free investment. The modern open floor plan features 9-foot ceilings, large windows, and contemporary finishes throughout. Smart home technology is pre-installed for lights, doorbell, and thermostat. Energy-efficient design includes LED lighting, tankless water heater, and high-efficiency HVAC - your utility bills will thank you. The neighborhood features tree-lined streets, sidewalks, and a playground. Everything is new, everything is perfect, and everything is covered by comprehensive warranty. Just move in and enjoy!',
     features: ['Open Floor Plan', 'Smart Home', 'Hardwood Floors', 'Granite Countertops', 'Garage'],
@@ -652,8 +621,7 @@ export const mockProperties: Property[] = [
     propertyType: 'house',
     yearBuilt: 2023,
     images: [
-      'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=1200&auto=format&fit=crop',
     ],
     description: 'This spectacular new build represents the pinnacle of luxury construction. Every detail has been carefully considered from the designer light fixtures to the hardwood floors throughout. The gourmet kitchen features a 72-inch refrigerator, 8-burner range, and walk-in pantry. Upstairs, five bedroom suites each have en-suite bathrooms with premium tile and fixtures. The bonus room is pre-wired for theater or gym equipment. Three-car garage with epoxy floors and built-in storage. Smart home technology controls security, climate, and entertainment. This is your chance to be the first to call this masterpiece home - no compromises, no waiting, just perfection.',
     features: ['Smart Home', 'Gourmet Kitchen', 'Hardwood Floors', 'Deck', 'Garage'],
