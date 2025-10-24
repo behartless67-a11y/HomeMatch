@@ -87,7 +87,7 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          <div className="animate-fadeIn">
+          <div className="animate-fadeIn h-full">
             <SwipeView properties={properties} />
           </div>
         )}
